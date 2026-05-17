@@ -1,0 +1,152 @@
+/* ============================================
+   XPARQ Holdings Corp. — Global Styles
+   Shared variables, reset, typography, cursor,
+   noise overlay, animations, responsive
+   ============================================ */
+
+/* --- CSS Variables (Design Tokens) --- */
+:root {
+  --navy:           #0b1628;
+  --navy-mid:       #0f1e38;
+  --navy-light:     #152440;
+  --electric:       #2d9cff;
+  --electric-bright:#4db8ff;
+  --electric-glow:  rgba(45,156,255,0.25);
+  --electric-faint: rgba(45,156,255,0.08);
+  --white:          #f0f4ff;
+  --white-dim:      rgba(240,244,255,0.55);
+  --white-faint:    rgba(240,244,255,0.12);
+  --accent-gold:    #c8a84b;
+  --accent-teal:    #00e5cc;
+  --accent-rose:    #ff4f7b;
+  --accent-violet:  #9b5de5;
+
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body:    'Syne', sans-serif;
+  --font-mono:    'DM Mono', monospace;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--navy);
+  color: var(--white);
+  font-family: 'Syne', sans-serif;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* --- Custom Cursor --- */
+.cursor {
+  position: fixed;
+  width: 12px; height: 12px;
+  background: var(--electric);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s, width 0.2s, height 0.2s, opacity 0.2s;
+  mix-blend-mode: screen;
+}
+.cursor-ring {
+  position: fixed;
+  width: 36px; height: 36px;
+  border: 1.5px solid var(--electric);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.18s ease, width 0.25s, height 0.25s, opacity 0.25s;
+  opacity: 0.5;
+}
+
+/* --- Noise Overlay --- */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+/* --- Section Commons --- */
+section { position: relative; }
+
+.section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--electric);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-label::before {
+  content: '';
+  width: 24px; height: 1px;
+  background: var(--electric);
+}
+
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(42px, 6vw, 80px);
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+/* --- Scroll Reveal --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s, transform 0.7s;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* --- Keyframes --- */
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes boltReveal {
+  0% { opacity: 0; transform: translateY(-40%) scale(0.8); }
+  100% { opacity: 1; transform: translateY(-50%) scale(1); }
+}
+
+@keyframes tickerScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes pulse {
+  0%, 100% { filter: drop-shadow(0 0 40px rgba(45,156,255,0.4)); }
+  50% { filter: drop-shadow(0 0 80px rgba(45,156,255,0.8)); }
+}
+
+.bolt-pulse { animation: pulse 3s ease-in-out infinite; }
+
+/* --- Responsive (Mobile) --- */
+@media (max-width: 900px) {
+  nav { padding: 20px 24px; }
+  .nav-links { display: none; }
+  .hero { padding: 0 24px; padding-top: 80px; }
+  .hero-bolt { display: none; }
+  .about { grid-template-columns: 1fr; padding: 80px 24px; gap: 48px; }
+  .products { padding: 80px 24px; }
+  .products-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .products-grid { grid-template-columns: 1fr; }
+  .product-card:nth-child(n) { grid-column: span 1; }
+  .manifesto { padding: 100px 24px; }
+  .divisions { padding: 80px 24px; }
+  .division-name { font-size: 22px; }
+  .contact-cta { padding: 100px 24px; }
+  footer { flex-direction: column; gap: 24px; align-items: flex-start; padding: 40px 24px; }
+}

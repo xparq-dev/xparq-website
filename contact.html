@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — XPARQ Holdings Corp.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/global.css">
+<link rel="stylesheet" href="/assets/css/components.css">
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <svg class="logo-bolt" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="58,5 20,55 48,55 42,95 80,45 52,45" fill="#2d9cff"/>
+    </svg>
+    <span class="logo-text">XPARQ <span>Holdings</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/#products">Products</a></li>
+    <li><a href="/#manifesto">Vision</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+  <button class="nav-cta">Get in Touch</button>
+</nav>
+
+<!-- HERO (compact) -->
+<section class="hero" style="min-height: 40vh;">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">⚡ Get In Touch</p>
+    <h1 class="hero-title" style="font-size: clamp(56px, 8vw, 110px);">
+      LET'S BUILD<br>
+      <span class="line-accent">TOGETHER</span>
+    </h1>
+  </div>
+</section>
+
+<!-- CONTACT SECTION (two-column using .about grid) -->
+<section class="about" id="contact">
+
+  <!-- Left: Contact Info -->
+  <div class="about-text reveal">
+    <p class="section-label">Contact</p>
+    <h2 class="section-title">REACH<br>OUT</h2>
+
+    <div class="contact-info-block" style="margin-top: 32px;">
+      <div class="contact-info-label">Email</div>
+      <div class="contact-info-value">
+        <a href="mailto:contact@xparq.me">⚡ contact@xparq.me</a>
+      </div>
+    </div>
+
+    <div class="contact-info-block">
+      <div class="contact-info-label">Location</div>
+      <div class="contact-info-value">Global / Remote</div>
+    </div>
+
+    <div class="contact-info-block">
+      <div class="contact-info-label">Divisions</div>
+      <div class="contact-division-line">XPARQ APP <span>— app@xparq.me</span></div>
+      <div class="contact-division-line">XPARQ AI <span>— ai@xparq.me</span></div>
+      <div class="contact-division-line">XPARQ COMMERCE <span>— commerce@xparq.me</span></div>
+      <div class="contact-division-line">X-GAME STUDIO <span>— games@xparq.me</span></div>
+      <div class="contact-division-line">XPARQ RECORDS <span>— records@xparq.me</span></div>
+    </div>
+  </div>
+
+  <!-- Right: Contact Form (NO <form> tag) -->
+  <div class="reveal">
+    <div class="form-group">
+      <label class="form-label" for="fieldName">Full Name</label>
+      <input type="text" id="fieldName" class="form-input" placeholder="Your name">
+      <div class="form-error-text" id="errorName"></div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="fieldEmail">Email</label>
+      <input type="email" id="fieldEmail" class="form-input" placeholder="you@example.com">
+      <div class="form-error-text" id="errorEmail"></div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="fieldSubject">Subject</label>
+      <select id="fieldSubject" class="form-select">
+        <option value="">Select a subject…</option>
+        <option value="general">General Inquiry</option>
+        <option value="partnership">Partnership</option>
+        <option value="xparq-app">XPARQ APP</option>
+        <option value="xparq-ai">XPARQ AI</option>
+        <option value="xgame-studio">X-GAME STUDIO</option>
+        <option value="xparq-records">XPARQ RECORDS</option>
+      </select>
+      <div class="form-error-text" id="errorSubject"></div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="fieldMessage">Message</label>
+      <textarea id="fieldMessage" class="form-textarea" placeholder="Tell us what you're thinking… (min 20 characters)"></textarea>
+      <div class="form-error-text" id="errorMessage"></div>
+    </div>
+
+    <button id="contactSubmit" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 8px;">
+      Send Message
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+
+    <div class="form-success" id="formSuccess">
+      ⚡ Message received! We'll get back to you soon.
+    </div>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <svg width="22" height="22" viewBox="0 0 100 100" fill="none">
+      <polygon points="58,5 20,55 48,55 42,95 80,45 52,45" fill="#2d9cff"/>
+    </svg>
+    <span class="footer-copy">© 2024 XPARQ Holdings Corp. All rights reserved.</span>
+  </div>
+  <ul class="footer-links">
+    <li><a href="#">Privacy</a></li>
+    <li><a href="#">Terms</a></li>
+    <li><a href="#">Careers</a></li>
+    <li><a href="#">Press</a></li>
+  </ul>
+</footer>
+
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>
