@@ -16,7 +16,9 @@ const DART = path.join(
   "data",
   "legal_documents.dart",
 );
-const OUT = path.join(ROOT, "legal");
+/** Public legal docs for the XPARQ App product (not corporate site root). */
+const LEGAL_PREFIX = "/products/xparq-app/legal";
+const OUT = path.join(ROOT, "products", "xparq-app", "legal");
 
 const DOCS = [
   ["privacyPolicyEn", "privacy-policy", "en", "Privacy Policy"],
@@ -107,7 +109,7 @@ function page(slug, lang, title, bodyHtml) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${title} — XPARQ</title>
 <meta name="description" content="${title} for the XPARQ platform and mobile app.">
-<link rel="canonical" href="https://xparq.me/legal/${slug}.html?lang=${lang}">
+<link rel="canonical" href="https://xparq.me${LEGAL_PREFIX}/${slug}.html?lang=${lang}">
 <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
@@ -117,17 +119,17 @@ function page(slug, lang, title, bodyHtml) {
 </head>
 <body>
 <nav class="legal-nav">
-  <a href="/" class="nav-logo">
+  <a href="/products/xparq-app.html" class="nav-logo">
     <svg class="logo-bolt" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
       <polygon points="58,5 20,55 48,55 42,95 80,45 52,45" fill="#2d9cff"/>
     </svg>
-    <span class="logo-text">XPARQ</span>
+    <span class="logo-text">XPARQ App</span>
   </a>
   <div class="legal-nav-links">
-    <a href="/legal/privacy-policy.html">Privacy</a>
-    <a href="/legal/terms.html">Terms</a>
-    <a href="/legal/community-guidelines.html">Guidelines</a>
-    <a class="lang-switch" href="/legal/${slug}.html?lang=${other}">${otherLabel}</a>
+    <a href="${LEGAL_PREFIX}/privacy-policy.html">Privacy</a>
+    <a href="${LEGAL_PREFIX}/terms.html">Terms</a>
+    <a href="${LEGAL_PREFIX}/community-guidelines.html">Guidelines</a>
+    <a class="lang-switch" href="${LEGAL_PREFIX}/${slug}.html?lang=${other}">${otherLabel}</a>
   </div>
 </nav>
 <main class="legal-page">

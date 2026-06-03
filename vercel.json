@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/legal/:path*",
+      "destination": "/products/xparq-app/legal/:path*",
+      "permanent": true
+    }
+  ]
+}
