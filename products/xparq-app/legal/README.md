@@ -1,6 +1,6 @@
-# XPARQ App — legal pages (xparq.me)
+# XPARQ App — legal pages (on xparq.me)
 
-Policies for the **XPARQ App** product (synced from the mobile app):
+**xparq.me** is the corporate landing; these pages are the **XPARQ App** product policies only (synced from the mobile app):
 
 - https://xparq.me/products/xparq-app/legal/privacy-policy.html (EN) — `?lang=th` → Thai
 - https://xparq.me/products/xparq-app/legal/terms.html
